@@ -3,8 +3,8 @@ describe('Orange HRM Tests', () => {
     usernameField: "[name='username']",
     passwordField:"[name='password']",
     loginButton: "[type='submit']",
-    sectionTittleTopBar: ".oxd-topbar-header-breadcrumb-module"
-    wrongCredentialAlert: "[role=`alert`]"
+    sectionTittleTopBar: ".oxd-topbar-header-breadcrumb-module",
+    wrongCredentialAlert: "[role=alert]"
   }
   it('Login - Sucecess', () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
@@ -13,7 +13,7 @@ describe('Orange HRM Tests', () => {
     cy.get(selectorsList.loginButton).click()
     cy.location(`pathname`).should(`equal`, `/web/index.php/dashboard/index`)
     cy.get(selectorsList.sectionTittleTopBar).contains(`Dashboard`)
-  })               
+   })               
   it('Login - fail', () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     cy.get(selectorsList.usernameField).type('test')
