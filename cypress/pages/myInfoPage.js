@@ -4,6 +4,7 @@ class MyInfoPage {
         const selectors = {
             firstNameField: "[name='firstName']",
             lastNameField: "[name='middleName']",
+            nickNameField: "[name='lastName']",
             genericField: ".oxd-input--active",
             genericComboBox: ".oxd-select-text--active",
             dateCloseButton: ".--close",
@@ -13,10 +14,10 @@ class MyInfoPage {
         return selectors
     }
          
-    fillPersonalDetails(firstName,lastName){        
+    fillPersonalDetails(firstName,lastName,nickName){        
     cy.get(this.selectorsList().firstNameField).clear().type(firstName)
     cy.get(this.selectorsList().lastNameField).clear().type(lastName)
-   /* cy.get(this.selectorsList().genericField).eq(3).clear().type(nickName)*/
+    cy.get(this.selectorsList().nickNameField).clear().type(nickName)
     }
 
     fillEmployeeDetails(EmployeeID, OtherID, DriveLicence, LicenseExpiry,DateBirth){
